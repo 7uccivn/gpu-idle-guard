@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "GPU Idle Guard",
+  "version": "1.0.0",
+  "description": "Alerts you when a Colab/Kaggle GPU session is active but you've gone idle, preventing wasted free GPU quota.",
+  "permissions": [
+    "alarms",
+    "scripting",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://colab.research.google.com/*",
+    "https://www.kaggle.com/code/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "GPU Idle Guard",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://colab.research.google.com/*",
+        "https://www.kaggle.com/code/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["alert.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

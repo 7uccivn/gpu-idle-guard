@@ -1,0 +1,85 @@
+/* GPU Idle Guard — modal overlay. Scoped via #gpu-idle-guard-modal
+   to avoid colliding with host page styles. !important used liberally
+   because Colab/Kaggle have aggressive global CSS. */
+
+#gpu-idle-guard-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;          /* max int — sit above everything */
+  background: rgba(0, 0, 0, 0.65) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  animation: gig-fade-in 0.2s ease-out !important;
+}
+
+#gpu-idle-guard-modal .gig-card {
+  background: #fff !important;
+  color: #111 !important;
+  max-width: 460px !important;
+  width: calc(100% - 48px) !important;
+  padding: 32px 28px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35) !important;
+  text-align: center !important;
+  border: 3px solid #d93025 !important;
+  animation: gig-pop 0.25s ease-out !important;
+}
+
+#gpu-idle-guard-modal .gig-icon {
+  font-size: 48px !important;
+  line-height: 1 !important;
+  margin-bottom: 12px !important;
+}
+
+#gpu-idle-guard-modal h1 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #d93025 !important;
+  margin: 0 0 12px !important;
+  line-height: 1.3 !important;
+}
+
+#gpu-idle-guard-modal p {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  margin: 0 0 24px !important;
+  color: #333 !important;
+}
+
+#gpu-idle-guard-modal .gig-actions {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px !important;
+}
+
+#gpu-idle-guard-modal .gig-btn {
+  font: inherit !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+
+#gpu-idle-guard-modal .gig-btn-primary {
+  background: #d93025 !important;
+  color: #fff !important;
+}
+
+#gpu-idle-guard-modal .gig-btn-primary:hover {
+  background: #b3271c !important;
+}
+
+@keyframes gig-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes gig-pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
