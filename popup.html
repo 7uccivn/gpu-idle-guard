@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <header>
+      <img src="icon48.png" width="24" height="24" alt="">
+      <h1>GPU Idle Guard</h1>
+    </header>
+
+    <div class="row">
+      <span class="label">GPU active</span>
+      <span id="gpu-status" class="value">…</span>
+    </div>
+    <div class="row">
+      <span class="label">Idle for</span>
+      <span id="idle-time" class="value">…</span>
+    </div>
+    <div class="row">
+      <span class="label">Alert in</span>
+      <span id="fires-in" class="value">…</span>
+    </div>
+    <div class="row">
+      <span class="label">Quota</span>
+      <span id="quota" class="value">—</span>
+    </div>
+
+    <div class="actions">
+      <button id="snooze" disabled>Snooze 15 min</button>
+      <button id="stop" class="danger" disabled>Stop session</button>
+    </div>
+
+    <p id="hint" class="hint">Open a Colab or Kaggle notebook tab.</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
