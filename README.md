@@ -76,3 +76,4 @@ No analytics. No network calls. No data leaves your browser.
 ## License
 
 MIT — see `LICENSE`.
+
