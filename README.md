@@ -5,6 +5,16 @@ A Chrome extension that prevents data scientists from accidentally burning their
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
+<p align="center">
+  <img src="screenshots/modal.png" alt="Idle alert modal" width="640"><br>
+  <em>Walk away from a GPU session and it lets you know.</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/popup.png" alt="Toolbar popup" width="320"><br>
+  <em>Toolbar popup: live status, quota left, snooze, and stop-session.</em>
+</p>
+
 ## Why
 
 Free GPU on Colab and Kaggle is a finite resource. It is easy to spin up a runtime, walk away for a coffee, and come back to find half your weekly quota gone for nothing. GPU Idle Guard watches the page, detects whether a GPU session is actually running, tracks user interaction, and pops a hard-to-miss modal once you have been idle past the threshold.
